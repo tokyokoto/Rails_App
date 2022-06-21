@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def auth_user
+    if params[:id] == session[:user_id]
+      redirect_to("/posts/index")
+      flash[:notice] = "編集権限がありません"
+    end
+  end
+  
   def forbid_login_user
     if @current_user
       flash[:notice] = "すでにログインしています"

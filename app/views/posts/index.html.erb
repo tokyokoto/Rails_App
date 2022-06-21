@@ -1,0 +1,16 @@
+<h1>posts/index => Posts#index</h1>
+<p>ログインしている場合の自分の session[:user_id] → <%= session[:user_id] %></p>
+<p><%= flash[:notice] %></p>
+
+<p>@current_user.name → <%= @current_user.name %></p>
+<p>@current_user.id → <%= @current_user.id %></p>
+
+
+<% @posts.each do |post| %>
+<p><img src="<%= "/post_images/#{post.image_id}" %>"></p>
+<p><%= link_to(post.content, "/posts/#{post.id}") %></p>
+<p>@post.id → <%= post.id %></p>
+<p>@image_id → <%= post.image_id %></p>
+<p>------------</P>
+</br>
+<% end %>

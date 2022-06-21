@@ -1,0 +1,16 @@
+<h1>posts/:id" => Posts#show</h1>
+<p>ログインしている場合の自分の session[:user_id] → <%= session[:user_id] %></p>
+<p><%= flash[:notice] %></p>
+
+
+<p>@current_user.name → <%= @current_user.name %></p>
+<p>@current_user.id → <%= @current_user.id %></p>
+<p>@post.id → <%= @post.id %></p>
+<p>@post.content → <%= @post.content %></p>
+<p>@post.user_id → <%= @post.user_id %></p>
+<p>@post.image_id → <%= @post.image_id %></p>
+<p>params[:id] → <%= params[:id] %></p>
+
+<% if @post.user_id == session[:user_id] %>
+        <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+<% end %>
