@@ -1,4 +1,4 @@
-<h1>get "posts/index" => "posts#index"</h1>
+<h1>get "users/new" => "users#new"</h1>
 <p><%= flash[:notice] %></p>
 <p>session[:user_id] → <%= session[:user_id] %></p>
 <p>@current_user.id → <%= @current_user.id %></p>
@@ -12,14 +12,15 @@
 <p><%= link_to("/users/new", "/users/new") %></p>
 <p><%= link_to("/users/edit", "/users/#{@current_user.id}/edit") %></p>
 <p><%= link_to("/users/show", "/users/#{@current_user.id}") %></p>
+<p><%= link_to("/login", "/login") %></p>
 <p>--------------------------------------------------------------------------</P>
 
-
-<% @posts.each do |post| %>
-<p>@post.id → <%= post.id %></p>
-<p>@post.content → <%= link_to(post.content, "/posts/#{post.id}") %></p>
-<p>@post.user_id → <%= post.user_id %></p>
-<p>@post.image_id → <%= post.image_id %></p>
-<p><img src="<%= "/post_images/#{post.image_id}" %>"></p>
-<p>--------------------------------------------------------------------------</P>
-<% end %>
+        <%= form_tag("/users/create") do %>
+          <p>ユーザー名</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>">
+          <p>パスワード</p>
+          <input type="password" name="password" value="<%= @user.password %>">
+          <input type="submit" value="新規登録">
+        <% end %>

@@ -1,6 +1,19 @@
-<h1>login => Users#login</h1>
-<p>ログインしている場合の自分の session[:user_id] → <%= session[:user_id] %></p>
+<h1>get "login" => "users#login_form"</h1>
 <p><%= flash[:notice] %></p>
+<p>session[:user_id] → <%= session[:user_id] %></p>
+
+
+
+
+
+<p><%= link_to("/posts/index", "/posts/index") %></p>
+<p><%= link_to("/posts/new", "/posts/new") %></p>
+<p><%= link_to("/users/index", "/users/index") %></p>
+<p><%= link_to("/users/new", "/users/new") %></p>
+<p><%= link_to("/login", "/login") %></p>
+
+<p>--------------------------------------------------------------------------</P>
+
 <p><%= @error_message %></p>
 
 

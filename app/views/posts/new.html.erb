@@ -1,0 +1,12 @@
+<h1>posts/new => Posts#new</h1>
+<p><%= flash[:notice] %></p>
+<p>ログインしている場合の自分の session[:user_id] → <%= session[:user_id] %></p>
+
+<p>@current_user.id → <%= @current_user.id %></p>
+
+    <%= form_tag("/posts/create") do %>
+          <textarea name="content"><%= @post.content %></textarea>
+        <p>画像</p>
+          <input name="image" type="file">
+          <input type="submit" value="保存">
+    <% end %>

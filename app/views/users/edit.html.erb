@@ -1,4 +1,16 @@
-<h1>users/:id/edit => users#edit</h1>
-<p>ログインしている場合の自分の session[:user_id] → <%= session[:user_id] %></p>
+<h1>get "users/:id/edit" => "users#edit"</h1>
 <p><%= flash[:notice] %></p>
-
+<p>session[:user_id] → <%= session[:user_id] %></p>
+<p>@current_user.id → <%= @current_user.id %></p>
+<p>@current_user.name → <%= @current_user.name %></p>
+<p>@current_user.email → <%= @current_user.email %></p>
+<p>@current_user.image_name → <%= @current_user.image_name %></p>
+<p>@current_user.password → <%= @current_user.password %></p>
+<p><%= link_to("/posts/index", "/posts/index") %></p>
+<p><%= link_to("/posts/new", "/posts/new") %></p>
+<p><%= link_to("/users/index", "/users/index") %></p>
+<p><%= link_to("/users/new", "/users/new") %></p>
+<p><%= link_to("/users/edit", "/users/#{@current_user.id}/edit") %></p>
+<p><%= link_to("/users/show", "/users/#{@current_user.id}") %></p>
+<p><%= link_to("/login", "/login") %></p>
+<p>--------------------------------------------------------------------------</P>
